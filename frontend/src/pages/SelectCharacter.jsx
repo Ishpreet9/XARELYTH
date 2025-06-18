@@ -25,41 +25,27 @@ const SelectCharacter = () => {
       <div onClick={() => {
         setSelectionBoxVisible(true);
         playSound();
-        }} className='bg-neutral-200 border-[0.34vw] border-yellow-700/50 hover:border-blue-300/80 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
+        }} className='bg-neutral-200 border-[0.2vw] border-neutral-100 hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
         <img src={assets.obscerion_l1} alt="" className='w-full h-full' />
       </div>
       <div onClick={() => {
         setSelectionBoxVisible(true);
         playSound();
-        }} className='bg-neutral-200 border-[0.34vw] border-yellow-700/50 hover:border-blue-300/80 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
+        }} className='bg-neutral-200 border-[0.2vw] border-neutral-100 hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
         <img src={assets.thornexus_l1} alt="" className='w-full h-full' />
       </div>
       <div onClick={() => {
         setSelectionBoxVisible(true);
         playSound();
-        }} className='bg-neutral-200 border-[0.34vw] border-yellow-700/50 hover:border-blue-300/80 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
+        }} className='bg-neutral-200 border-[0.2vw] border-neutral-100 hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
         <img src={assets.kaigen_l1} alt="" className='w-full h-full' />
       </div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
-      <div className='bg-neutral-200 border-[0.34vw] border-neutral-300 rounded-xl h-[24.3vw]'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
     </div>
   )
 }

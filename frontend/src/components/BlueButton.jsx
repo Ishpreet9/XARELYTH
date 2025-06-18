@@ -4,16 +4,16 @@ import { assets } from '../assets/assets'
 
 const BlueButton = ({text, redirectionLink, setButtonHover}) => {
     
-    const audioRef = useRef(new Audio(assets.clickSoundEffect));
+    const audioRef = useRef(new Audio(assets.clickSoundEffect2));
 
     const playSound = () => {
         audioRef.current.volume = 0.3;
-        audioRef.current.currentTime = 20; //rewind before start
+        audioRef.current.currentTime = 0.09; //rewind before start
         audioRef.current.play();
 
         setTimeout(() => {
           audioRef.current.pause();
-          audioRef.current.currentTime = 20; // Prep for next click
+          audioRef.current.currentTime = 0; // Prep for next click
         }, 1000); // Pause after 1 second (1000ms)
     }
 

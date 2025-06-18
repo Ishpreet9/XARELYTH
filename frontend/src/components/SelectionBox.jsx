@@ -9,7 +9,7 @@ const SelectionBox = ({selectionBoxVisible, setSelectionBoxVisible}) => {
             <div onClick={()=>setSelectionBoxVisible(false)} className='absolute z-10 right-[1vw] -top-[3.8vw]'>
                <CrossButton/>
             </div>
-            <div className='h-full w-[21.4vw] bg-green-400 overflow-hidden rounded-[0.7vw] border-2 border-neutral-900'>
+            <div className='h-full w-[21.4vw] bg-green-400 overflow-hidden rounded-[0.7vw] border-2 border-neutral-100'>
                 <img src={assets.obscerion_l1} alt="" />
             </div>
             <div className='flex flex-col gap-[1.5vw] p-[1.7vw] bg-neutral-200 h-full flex-1 rounded-[0.7vw]'>
@@ -18,6 +18,15 @@ const SelectionBox = ({selectionBoxVisible, setSelectionBoxVisible}) => {
                 <span>It is foretold that on the final day — when all stars burn out and the last question is asked — Obscerion will unseal his face. The crosses will open. Not to reveal answers, but to return all the world's forgotten truths at once.</span>
                 <span>That day is called The Unbinding, and it is feared not for destruction… but for absolute understanding.</span>
                 <span>And so Obscerion waits, carved in shadow — the last echo before truth speaks.</span>
+              </div>
+              <div className='flex justify-center items-center border-2 border-dashed border-neutral-300 w-full h-[8vw] text-neutral-500 font-semibold text-xl'>
+                <span>STATS</span>
+              </div>
+              <div className='flex justify-center items-center w-full flex-1'>
+                 <button className='relative flex justify-center items-center w-[9.5vw] h-[80%] text-2xl text-[1.3vw] bg-transparent border-2 border-green-600 hover:border-white font-bold cursor-pointer text-green-600 overflow-hidden group'>
+                  <div className='absolute w-[120%] h-[130%] bg-green-500 skew-x-12 -translate-x-[11vw] group-hover:translate-x-0 transition-all duration-1000'></div>
+                   <span className='relative z-10 group-hover:text-white transition-color duration-700'>CONFIRM</span>
+                 </button>
               </div>
             </div>
         </div>
