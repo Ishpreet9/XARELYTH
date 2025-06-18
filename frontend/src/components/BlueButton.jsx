@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import {NavLink} from 'react-router-dom'
 import { assets } from '../assets/assets'
 
-const BlueButton = ({text, redirectionLink}) => {
+const BlueButton = ({text, redirectionLink, setButtonHover}) => {
     
     const audioRef = useRef(new Audio(assets.clickSoundEffect));
 
@@ -18,7 +18,7 @@ const BlueButton = ({text, redirectionLink}) => {
     }
 
   return (
-    <NavLink onClick={playSound} to={redirectionLink} className='relative border-2 border-black p-[0.65vw] group cursor-pointer'>
+    <NavLink onMouseEnter={()=>setButtonHover(true)} onMouseLeave={()=>setButtonHover(false)} onClick={playSound} to={redirectionLink} className='relative border-2 border-black p-[0.65vw] group cursor-pointer'>
       <button className='min-w-[13.8vw] relative border-2 border-black px-[2vw] py-[0.45vw] font-bold text-[2vw] bg-neutral-100 group-hover:bg-blue-400 group-hover:text-white transition-all cursor-pointer duration-500'>
         {text}
         <div className='absolute top-0 left-0 z-10 w-[1.2vw] h-[1.2vw] bg-blue-400 group-hover:bg-neutral-100 transition-all duration-500'></div>

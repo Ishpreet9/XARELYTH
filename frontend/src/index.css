@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+
+.vertical-japanese {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
