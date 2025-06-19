@@ -20,32 +20,32 @@ const SelectCharacter = () => {
   }
 
   return (
-    <div className='grid grid-cols-5 gap-[2vw] p-[2vw] h-screen w-screen overflow-scroll custom-scroll'>
+    <div className='grid grid-cols-5 gap-[2vw] p-[2vw] h-screen w-screen bg-neutral-300 overflow-scroll custom-scroll'>
       <SelectionBox selectionBoxVisible={selectionBoxVisible} setSelectionBoxVisible={setSelectionBoxVisible} />
       <div onClick={() => {
         setSelectionBoxVisible(true);
         playSound();
-        }} className='bg-neutral-200 border-[0.2vw] border-neutral-100 hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
+        }} className='bg-neutral-200 border-[0.2vw] border-white hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden shadow-[0_0_13px_rgba(0,0,0,0.3)]'>
         <img src={assets.obscerion_l1} alt="" className='w-full h-full' />
       </div>
       <div onClick={() => {
         setSelectionBoxVisible(true);
         playSound();
-        }} className='bg-neutral-200 border-[0.2vw] border-neutral-100 hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
+        }} className='bg-neutral-200 border-[0.2vw] border-white hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden shadow-[0_0_13px_rgba(0,0,0,0.3)]'>
         <img src={assets.thornexus_l1} alt="" className='w-full h-full' />
       </div>
       <div onClick={() => {
         setSelectionBoxVisible(true);
         playSound();
-        }} className='bg-neutral-200 border-[0.2vw] border-neutral-100 hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden'>
+        }} className='bg-neutral-200 border-[0.2vw] border-white hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden shadow-[0_0_13px_rgba(0,0,0,0.3)]'>
         <img src={assets.kaigen_l1} alt="" className='w-full h-full' />
       </div>
-      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
-      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
-      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
-      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
-      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
-      <div className='bg-neutral-200 border-[0.2vw] border-neutral-100 rounded-xl h-[24.3vw] cursor-pointer'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-white rounded-xl h-[24.3vw] cursor-pointer shadow-[0_0_13px_rgba(0,0,0,0.3)]'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-white rounded-xl h-[24.3vw] cursor-pointer shadow-[0_0_13px_rgba(0,0,0,0.3)]'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-white rounded-xl h-[24.3vw] cursor-pointer shadow-[0_0_13px_rgba(0,0,0,0.3)]'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-white rounded-xl h-[24.3vw] cursor-pointer shadow-[0_0_13px_rgba(0,0,0,0.3)]'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-white rounded-xl h-[24.3vw] cursor-pointer shadow-[0_0_13px_rgba(0,0,0,0.3)]'></div>
+      <div className='bg-neutral-200 border-[0.2vw] border-white rounded-xl h-[24.3vw] cursor-pointer shadow-[0_0_13px_rgba(0,0,0,0.3)]'></div>
     </div>
   )
 }

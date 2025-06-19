@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import CrossButton from './CrossButton'
 
@@ -23,10 +24,10 @@ const SelectionBox = ({selectionBoxVisible, setSelectionBoxVisible}) => {
                 <span>STATS</span>
               </div>
               <div className='flex justify-center items-center w-full flex-1'>
-                 <button className='relative flex justify-center items-center w-[9.5vw] h-[80%] text-2xl text-[1.3vw] bg-transparent border-2 border-green-600 hover:border-white font-bold cursor-pointer text-green-600 overflow-hidden group'>
+                 <NavLink to={'/lobby'} className='relative flex justify-center items-center w-[9.5vw] h-[80%] text-2xl text-[1.3vw] bg-transparent border-2 border-green-600 hover:border-white font-bold cursor-pointer text-green-600 overflow-hidden group'>
                   <div className='absolute w-[120%] h-[130%] bg-green-500 skew-x-12 -translate-x-[11vw] group-hover:translate-x-0 transition-all duration-1000'></div>
                    <span className='relative z-10 group-hover:text-white transition-color duration-700'>CONFIRM</span>
-                 </button>
+                 </NavLink>
               </div>
             </div>
         </div>
