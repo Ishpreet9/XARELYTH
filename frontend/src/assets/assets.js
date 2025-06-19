@@ -13,6 +13,7 @@ import obscerion_l1 from './obscerion-l1.png'
 import thornexus_l1 from './thornexus-l1.png'
 import kaigen_l1 from './kaigen-l1.png'
 import cancel_sound_effect from './cancel-sound-effect.mp3'
+import clouds_bg from './clouds_bg.png'
 
 export const assets = {
     clickSoundEffect,
@@ -29,5 +30,6 @@ export const assets = {
     thornexus_l1,
     kaigen_l1,
     clickSoundEffect2,
-    cancel_sound_effect
+    cancel_sound_effect,
+    clouds_bg
 }
