@@ -26,7 +26,7 @@ const SelectCharacter = () => {
         setSelectionBoxVisible(true);
         playSound();
         }} className='bg-neutral-200 border-[0.2vw] border-white hover:border-neutral-700 rounded-xl h-[24.3vw] transition-color duration-500 cursor-pointer overflow-hidden shadow-[0_0_13px_rgba(0,0,0,0.3)]'>
-        <img src={assets.obscerion_l1} alt="" className='w-full h-full' />
+        <img src={assets.obscerion_l3} alt="" className='w-full h-full' />
       </div>
       <div onClick={() => {
         setSelectionBoxVisible(true);

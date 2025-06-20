@@ -11,7 +11,7 @@ const SelectionBox = ({selectionBoxVisible, setSelectionBoxVisible}) => {
                <CrossButton/>
             </div>
             <div className='h-full w-[21.4vw] bg-green-400 overflow-hidden rounded-[0.7vw] border-2 border-neutral-100'>
-                <img src={assets.obscerion_l1} alt="" />
+                <img src={assets.obscerion_l3} alt="" />
             </div>
             <div className='flex flex-col gap-[1.5vw] p-[1.7vw] bg-neutral-200 h-full flex-1 rounded-[0.7vw]'>
               <span className='text-3xl text-neutral-800 font-mono font-semibold'>OBSCERION</span>

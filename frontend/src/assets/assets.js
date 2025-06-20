@@ -10,10 +10,13 @@ import rune_r_2 from './rune-r-2.png'
 import rune_r_3 from './rune-r-3.png'
 import rune_r_4 from './rune-r-4.png'
 import obscerion_l1 from './obscerion-l1.png'
+import obscerion_l2 from './obscerion-l2.png'
+import obscerion_l3 from './obscerion-l3.png'
 import thornexus_l1 from './thornexus-l1.png'
 import kaigen_l1 from './kaigen-l1.png'
 import cancel_sound_effect from './cancel-sound-effect.mp3'
 import clouds_bg from './clouds_bg.png'
+import rank_s from './rank_s.png'
 
 export const assets = {
     clickSoundEffect,
@@ -27,9 +30,12 @@ export const assets = {
     rune_r_3,
     rune_r_4,
     obscerion_l1,
+    obscerion_l2,
+    obscerion_l3,
     thornexus_l1,
     kaigen_l1,
     clickSoundEffect2,
     cancel_sound_effect,
-    clouds_bg
+    clouds_bg,
+    rank_s
 }
