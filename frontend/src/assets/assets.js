@@ -17,6 +17,8 @@ import kaigen_l1 from './kaigen-l1.png'
 import cancel_sound_effect from './cancel-sound-effect.mp3'
 import clouds_bg from './clouds_bg.png'
 import rank_s from './rank_s.png'
+import text_bg from './text_bg.png'
+import triangle from './triangle.png'
 
 export const assets = {
     clickSoundEffect,
@@ -37,5 +39,7 @@ export const assets = {
     clickSoundEffect2,
     cancel_sound_effect,
     clouds_bg,
-    rank_s
+    rank_s,
+    text_bg,
+    triangle
 }
