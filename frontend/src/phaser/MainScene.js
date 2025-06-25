@@ -26,11 +26,30 @@ export default class MainScene extends Phaser.Scene {
         // collide the player with the platform
         this.physics.add.collider(this.player, platform);
 
+        // creating cursor object for input
+        this.cursor = this.input.keyboard.createCursorKeys();
 
+        // adding keyboard inputs 
+        this.keys = this.input.keyboard.addKeys({
+            'left': Phaser.Input.Keyboard.KeyCodes.A,
+            'right': Phaser.Input.Keyboard.KeyCodes.D,
+            'up': Phaser.Input.Keyboard.KeyCodes.SPACE,
+        })
     }
 
     update() {
         // Update logic goes here
+        if(this.keys.left.isDown) {
+            this.player.setVelocityX(-200);
+        }else if(this.keys.right.isDown){
+            this.player.setVelocityX(200);
+        }else {
+            this.player.setVelocityX(0); //stop moving when no key is pressed 
+        }
+
+        if(this.keys.up.isDown && this.player.body.touching.down) {
+            this.player.setVelocityY(-400); //jumb
+        }
     }
 
 }
