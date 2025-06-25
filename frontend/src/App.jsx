@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home'
 import SelectCharacter from './pages/SelectCharacter'
 import Lobby from './pages/Lobby'
+import Play from './pages/Play'
 
 const App = () => {
 
@@ -18,6 +19,10 @@ const App = () => {
     {
       path: "/lobby",
       element: <Lobby/>
+    },
+    {
+      path: "/play",
+      element: <Play/>
     }
   ])
 

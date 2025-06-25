@@ -19,6 +19,9 @@ import clouds_bg from './clouds_bg.png'
 import rank_s from './rank_s.png'
 import text_bg from './text_bg.png'
 import triangle from './triangle.png'
+import bg_image_1 from './bg_image_1.jpg'
+import platform from './platform.png';
+import character from './character.png';
 
 export const assets = {
     clickSoundEffect,
@@ -41,5 +44,8 @@ export const assets = {
     clouds_bg,
     rank_s,
     text_bg,
-    triangle
+    triangle,
+    bg_image_1,
+    platform,
+    character
 }

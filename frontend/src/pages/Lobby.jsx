@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import { assets } from '../assets/assets'
 import { FiPlus } from "react-icons/fi";
 import { VscTriangleRight } from "react-icons/vsc";
+import { NavLink } from 'react-router-dom';
 
 const Lobby = () => {
 
@@ -42,7 +43,7 @@ const Lobby = () => {
             </div>
           </div>
           {/* start match button */}
-          <button className='relative bg-blue-400 px-[0.5vw] py-[0.5vw] cursor-pointer group border-2 border-blue-500 shadow-[0_0_13px_rgba(0,0,0,0.3)]'>
+          <NavLink to={'/play'} className='relative bg-blue-400 px-[0.5vw] py-[0.5vw] cursor-pointer group border-2 border-blue-500 shadow-[0_0_13px_rgba(0,0,0,0.3)]'>
             {/* corner shapes */}
             <div className='absolute z-10 group-hover:-rotate-45 w-[0.75vw] h-[0.75vw] bg-blue-400 left-[0.21vw] top-[0.21vw] border-2 border-neutral-100 transition-all duration-500'></div>
             <div className='absolute z-10 group-hover:rotate-45 w-[0.75vw] h-[0.75vw] bg-blue-400 right-[0.21vw] top-[0.21vw] border-2 border-neutral-100 transition-all duration-500'></div>
@@ -56,7 +57,7 @@ const Lobby = () => {
             <div className=' flex justify-center items-center text-[1.2vw] text-neutral-100 font-bold font-mono border-2 border-neutral-100 w-full h-full px-[1.3vw]'>
               <span className='leading-none'>MATCH</span>
             </div>
-          </button>
+          </NavLink>
         </div>
         {/* character */}
         <div className='relative flex gap-[1vw] shadow-[0_0_13px_rgba(0,0,0,0.3)] rounded-xl p-[0.3vw] overflow-hidden'>
