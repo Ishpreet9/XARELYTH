@@ -19,7 +19,7 @@ const Play = () => {
           default: 'arcade',
           arcade: {
             gravity: { y: 500},
-            debug: true
+            debug: false
           }
         }
       }

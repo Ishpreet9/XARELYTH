@@ -22,6 +22,7 @@ import triangle from './triangle.png'
 import bg_image_1 from './bg_image_1.jpg'
 import platform from './platform.png';
 import character from './character.png';
+import player from './player.png'
 
 export const assets = {
     clickSoundEffect,
@@ -47,5 +48,6 @@ export const assets = {
     triangle,
     bg_image_1,
     platform,
-    character
+    character,
+    player
 }

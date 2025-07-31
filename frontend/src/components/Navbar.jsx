@@ -15,9 +15,9 @@ const Navbar = () => {
           <NavLink to={'/'} className='border-l-2 border-y-2 border-blue-500 hover:bg-blue-500 px-[1vw] py-[0.7vw] cursor-pointer transition-all duration-300'>
               <MdHome size={36} color='white' className='skew-x-7' />
           </NavLink>
-          <div className='border-l-2 border-y-2 border-blue-500 hover:bg-blue-500 px-[1vw] py-[0.7vw] cursor-pointer transition-all duration-300'>
+          <NavLink to={'/login'} className='border-l-2 border-y-2 border-blue-500 hover:bg-blue-500 px-[1vw] py-[0.7vw] cursor-pointer transition-all duration-300'>
               <BsPersonFill size={36} color='white' className='skew-x-7' />
-          </div>
+          </NavLink>
           <div className='border-l-2 border-y-2 border-blue-500 hover:bg-blue-500 px-[1vw] py-[0.7vw] cursor-pointer transition-all duration-300'>
               <IoMdSettings size={36} color='white' className='skew-x-7' />
           </div>
