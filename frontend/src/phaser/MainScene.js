@@ -23,13 +23,13 @@ export default class MainScene extends Phaser.Scene {
         const platform = this.physics.add.staticImage(this.cameras.main.centerX, this.scale.height + 170, 'platform').setScale(6).setOrigin(0.5, 1).refreshBody();
 
         // player with physics
-        this.player = this.physics.add.sprite(430, this.scale.height - 400, 'player').setScale(0.7);
+        this.player = this.physics.add.sprite(430, this.scale.height - 400, 'player').setScale(1);
         this.player.setBounce(0.2);
 
         this.anims.create({
             key: 'walk',
-            frames: this.anims.generateFrameNumbers('player', { start: 10, end: 36 }),
-            duration: 1000,
+            frames: this.anims.generateFrameNumbers('player', { start: 1, end: 36 }),
+            duration: 700,
             repeat: -1  // loop forever 
         });
 
@@ -40,7 +40,7 @@ export default class MainScene extends Phaser.Scene {
         // creating cursor object for input
         this.cursor = this.input.keyboard.createCursorKeys();
 
-        // adding keyboard inputs 
+        // adding keyboard inputs
         this.keys = this.input.keyboard.addKeys({
             'left': Phaser.Input.Keyboard.KeyCodes.A,
             'right': Phaser.Input.Keyboard.KeyCodes.D,
@@ -72,7 +72,7 @@ update() {
         // Start the timed move to the right
         this.isMovingRightTimed = true;
 
-        this.player.setVelocityX(100);
+        this.player.setVelocityX(170);
         this.player.setFlipX(false);   // <-- Make sure sprite faces right
         this.player.anims.play('walk', true);
 

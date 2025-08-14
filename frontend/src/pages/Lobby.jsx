@@ -5,16 +5,23 @@ import { FiPlus } from "react-icons/fi";
 import { VscTriangleRight } from "react-icons/vsc";
 import { NavLink } from 'react-router-dom';
 import Checkbox from '../components/Checkbox';
+import { GiCheckMark } from "react-icons/gi";
+import { MdAccessTimeFilled } from "react-icons/md";
+import DifficultySlider from '../components/DifficultySlider';
+
 
 const Lobby = () => {
 
   const [toggle, setToggle] = useState(false);
   const [taskComplete, setTaskComplete] = useState(true);
+  const [questComplete, setQuestComplete] = useState(false);
+  const [addTask, setAddTask] = useState(false);
+  const [difficultyValue, setDifficultyValue] = useState(5);
 
   return (
     <div className='flex flex-row items-start p-[1vw] w-screen h-screen bg-neutral-200'>
       {/* left part  */}
-      <div className='flex flex-col items-start gap-[2vw] p-[1vw] h-full'>
+      <div className='flex flex-col items-start w-[52%] gap-[2vw] p-[1vw] h-full'>
         {/* navbar and rank */}
         <div className='flex gap-[1.6vw]'>
           <Navbar />
@@ -31,7 +38,7 @@ const Lobby = () => {
               </div>
             </div>
           </div> */}
-          <div className='flex justify-center p-[0.2vw] bg-green-400 -skew-x-7 bg-gradient-to-br from-purple-400 to-blue-400 shadow-[0_0_13px_rgba(0,0,0,0.2)] cursor-pointer'>
+          <div className='flex justify-center p-[0.2vw] bg-green-400 bg-gradient-to-br from-purple-400 to-blue-400 shadow-[0_0_13px_rgba(0,0,0,0.2)] cursor-pointer'>
             <div className='relative w-full h-full flex justify-center items-center p-[0.3vw] bg-neutral-100'>
               <div className='absolute bg-neutral-100 z-30 left-[0.1vw] top-[0.85vw] w-[0.7vw] h-[1.3vw]'></div>
               <div className='absolute bg-neutral-100 z-30 right-[0.1vw] top-[0.85vw] w-[0.7vw] h-[1.3vw]'></div>
@@ -64,7 +71,7 @@ const Lobby = () => {
           </NavLink>
         </div>
         {/* character */}
-        <div className='relative flex gap-[1vw] bg-neutral-100 shadow-[0_0_13px_rgba(0,0,0,0.3)] rounded-xl p-[0.3vw] overflow-hidden'>
+        <div className='relative flex gap-[1vw] w-full bg-neutral-100 shadow-[0_0_13px_rgba(0,0,0,0.3)] rounded-xl p-[0.3vw] overflow-hidden'>
           <img src={assets.clouds_bg} alt="" className='absolute opacity-50 inset-0 w-full h-full mix-blend-darken' />
           <div className='relative z-10 w-[17vw] h-[25.4vw] overflow-hidden rounded-[0.7vw]'>
             <img src={assets.obscerion_l3} alt="" className='' />
@@ -80,88 +87,84 @@ const Lobby = () => {
             <span className='flex justify-center items-center text-[1.1vw] text-neutral-500 font-semibold w-full h-[2.5vw] bg-neutral-400/20 border-2 border-neutral-400 rounded-lg cursor-pointer'>7</span>
           </div>
           {/* character info & stats */}
-          <div className='relative z-10 flex flex-col p-[0.7vw] gap-[0.7vw] rounded-[0.7vw]'>
-            <h1 className='font-mono text-[2vw] font-bold'>OBSCERION</h1>
-            <span className='text-[1vw] font-semibold'>Class: Shadowbound</span>
-            {/* stats useful during game or one with a limit */}
-            <div className='flex flex-col py-[1vw]'>
+          <div className='relative z-10 flex flex-col p-[0.7vw] rounded-[0.7vw] justify-between items-start flex-1'>
+            <div>
+              <h1 className='font-mono text-[2vw] font-bold'>OBSCERION</h1>
+              <span className='text-[1vw] font-semibold'>Class: Shadowbound</span>
+            </div>
+            {/* health and mana */}
+            <div className='flex flex-col gap-[1.1vw] py-[1vw] px-[0.34vw] '>
               {/* vitality */}
-              <div className='flex justify-center items-center gap-[0.3vw]'>
-                <span className='text-xl font-bold mb-[0.34vw] min-w-[4vw]'>VTL</span>
-                <div className='w-[13vw] h-[1vw] bg-orange-400'></div>
-                <span className='text-xl font-semibold mb-[0.34vw]'>100</span>
-              </div>
-              {/* hp */}
-              <div className='flex justify-center items-center gap-[0.3vw]'>
-                <span className='text-xl font-bold mb-[0.34vw] min-w-[4vw]'>HP</span>
-                <div className='w-[13vw] h-[1vw] bg-green-400'></div>
-                <span className='text-xl font-semibold mb-[0.34vw]'>100</span>
+              <div className='flex justify-start items-center gap-[0.3vw]'>
+                <div className='relative w-[13vw] h-[1vw] bg-gradient-to-r from-red-700 to-red-400 -skew-x-17 border-[0.152vw]'>
+                  <img src={assets.health_icon} alt="" className='absolute left-0 -translate-x-[50%] top-0 -translate-y-[38%] skew-x-17 w-[3vw]'/>
+                </div>
+                <span className='text-xl font-semibold mb-[0.34vw] pl-[0.43vw]'>100</span>
               </div>
               {/* mp */}
-              <div className='flex justify-center items-center gap-[0.3vw]'>
-                <span className='text-xl font-bold mb-[0.34vw] min-w-[4vw]'>MANA</span>
-                <div className='w-[13vw] h-[1vw] bg-blue-400'></div>
-                <span className='text-xl font-semibold mb-[0.34vw]'>100</span>
-              </div>
-              {/* luck */}
-              <div className='flex justify-center items-center gap-[0.3vw]'>
-                <span className='text-xl font-bold mb-[0.34vw] min-w-[4vw]'>LUCK</span>
-                <div className='w-[13vw] h-[1vw] bg-yellow-400'></div>
-                <span className='text-xl font-semibold mb-[0.34vw]'>100</span>
+              <div className='flex justify-start items-center gap-[0.3vw]'>
+                <div className='relative w-[13vw] h-[1vw] bg-gradient-to-r from-blue-600 to-blue-400/90 -skew-x-17 border-[0.152vw]'>
+                  <img src={assets.mana_icon} alt="" className='absolute left-0 -translate-x-[50%] top-0 -translate-y-[40%] skew-x-17 w-[3vw]'/></div>
+                <span className='text-xl font-semibold mb-[0.34vw] pl-[0.43vw]'>100</span>
               </div>
             </div>
+            {/* abilities */}
+            <div className='flex justify-between items-center w-full my-[0.5vw]'>
+              <img src={assets.banner} alt="" className='w-[6.9vw]'/>
+              <img src={assets.banner} alt="" className='w-[6.9vw]'/>
+              <img src={assets.banner} alt="" className='w-[6.9vw]'/>
+            </div>
+            {/* banner */}
+            <img src={assets.horizontal_banner} alt="" className='w-[15vw]'/>
           </div>
         </div>
         {/* special quests */}
-        <div className='flex flex-col justify-between items-center w-full flex-1 p-[1vw] bg-neutral-100 rounded-[0.7vw] shadow-[0_0_13px_rgba(0,0,0,0.3)]'>
-          {/* quest name part */}
-          <div className='relative flex justify-center items-center w-full'>
-            {/* main div and text part */}
-            <div className='bg-neutral-300 opacity-50 border-2 border-neutral-400 flex-1 h-full'></div>
-            <span className='px-[1.7vw] bg-neutral-100 leading-none text-[1.5vw] font-semibold font-mono tracking-[0.25vw]'>QUEST NAME</span>
-            <div className='bg-neutral-300 opacity-50 border-2 border-neutral-400 flex-1 h-full'></div>
-            {/* left divs */}
-            <div className='absolute flex flex-col gap-[0.85vw] w-[1.6vw] left-0 top-[150%]'>
-              <div className='bg-neutral-300 opacity-50 border-2 border-neutral-400 w-full h-[1.6vw]'></div>
-              <div className='bg-neutral-300 opacity-50 border-2 border-neutral-400 w-full h-[1.6vw]'></div>
-              <div className='bg-neutral-300 opacity-50 border-2 border-neutral-400 w-full h-[1.6vw]'></div>
+        <div className='flex w-full flex-1 bg-neutral-100 rounded-[0.7vw] shadow-[0_0_13px_rgba(0,0,0,0.3)] '>
+          <div className='flex flex-col justify-start items-start w-[70%] h-full p-[1vw]'>
+            <span className='font-mono text-[0.87vw] font-semibold text-blue-500'>SPECIAL QUEST</span>
+            <div className='w-full flex justify-between items-center'>
+              <span className='text-[1.34vw] font-bold text-slate-700 border-b-2 border-dashed border-slate-400/80 py-[0vw]'>Echoes Of The Void</span>
+              {/* time indicator */}
+              <span className='bg-blue-400/10 h-[89.9%] border-2 border-blue-400/50 px-[1vw] flex gap-[0.43vw] justify-center items-center text-blue-500 text-[0.9vw] font-semibold rounded-[0.21vw]'>
+              {
+                questComplete ? 
+                <GiCheckMark size={19} className='text-white bg-blue-400 rounded-full p-[0.1vw]'/>
+                :
+                <MdAccessTimeFilled size={23}/>
+              }
+                <span className={`font-mono ${questComplete ? "tracking-[0.09vw]" : "tracking-[0.03vw]" }`}>{questComplete ? "COMPLETED" : "7D 12H"}</span>
+              </span>
             </div>
-            {/* right divs */}
-            <div className='absolute flex flex-col gap-[0.85vw] w-[1.6vw] right-0 top-[150%]'>
-              <div className='bg-neutral-300 opacity-50 border-2 border-neutral-400 w-full h-[1.6vw]'></div>
-              <div className='bg-neutral-300 opacity-50 border-2 border-neutral-400 w-full h-[1.6vw]'></div>
-              <div className='bg-neutral-300 opacity-50 border-2 border-neutral-400 w-full h-[1.6vw]'></div>
+            <span className='text-[1vw] font-semibold mt-[0.7vw] text-slate-600'>Objective</span>
+            <span className='max-w-full text-[0.87vw] font-normal text-slate-700'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit porro ipsum recusandae distinctio excepturi! Porro hic, corrupti nulla aperiam rem magnam cupiditate? Expedita praesentium magni eum molestias itaque? Cumque, neque?</span>
+          </div>
+          <div className='relative flex flex-col justify-between px-[1vw] py-[0.9vw] w-[30%] h-full rounded-r-lg'>
+            <div className='absolute w-[2vw] h-[2vw] top-1 left-1 border-t-2 border-l-2 border-neutral-400/70'></div>
+            <div className='absolute w-[2vw] h-[2vw] bottom-1 left-1 border-b-2 border-l-2 border-neutral-400/70'></div>
+            <div className='absolute w-[2vw] h-[2vw] top-1 right-1 border-t-2 border-r-2 rounded-tr-[0.52vw] border-neutral-400/70'></div>
+            <div className='absolute w-[2vw] h-[2vw] bottom-1 right-1 border-b-2 border-r-2 rounded-br-[0.52vw] border-neutral-400/70'></div>
+            <span className='font-mono text-[1.13vw] tracking-[0.3vw] text-slate-600 font-semibold leading-none'>REWARDS</span>
+            <div className='flex flex-col justify-start w-full h-[50%] gap-[1vw] overflow-y-scroll custom-scroll'>
+              <div className='bg-blue-400/20 flex justify-center itmes-centers border-[0.11vw] border-blue-400/50 text-[1vw] text-blue-500 font-mono font-medium rounded-[0.25vw]'>REWARD 1</div>
+              <div className='bg-blue-400/20 flex justify-center itmes-centers border-[0.11vw] border-blue-400/50 text-[1vw] text-blue-500 font-mono font-medium rounded-[0.25vw]'>REWARD 2</div>
+              <div className='bg-blue-400/20 flex justify-center itmes-centers border-[0.11vw] border-blue-400/50 text-[1vw] text-blue-500 font-mono font-medium rounded-[0.25vw]'>REWARD 3</div>
             </div>
-          </div>
-          {/* quest description */}
-          <div className='w-[34vw] text-[1.05vw]'>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum dolor nam fugiat ad possimus. Voluptate asperiores aliquid deleniti ab fugiat.
-          </div>
-          {/* claim rewards button */}
-          <button className='relative border-2 border-neutral-400 rounded-md hover:rounded-none hover:border-blue-600 px-[1.2vw] py-[0.5vw] text-[1vw] font-bold cursor-pointer group overflow-hidden transition-all duration-500'>
+            <button onClick={()=>setQuestComplete(true)} className='relative border-2 border-neutral-400 rounded-md hover:rounded-none hover:border-blue-600 px-[1.2vw] py-[0.5vw] text-[1vw] font-bold cursor-pointer group overflow-hidden transition-all duration-500'>
               <div class="absolute rounded-[0.2vw] group-hover:rounded-none z-10 top-[0.25vw] left-[0.25vw] group-hover:rotate-180 w-0 h-0 border-t-[13px] border-t-blue-400 group-hover:border-t-neutral-100 border-r-[13px] border-r-transparent transition-all duration-500"></div>
               <div class="absolute rounded-[0.2vw] group-hover:rounded-none z-10 top-[0.25vw] right-[0.25vw] group-hover:-rotate-90 rotate-90 w-0 h-0 border-t-[13px] border-t-blue-400 group-hover:border-t-neutral-100 border-r-[13px] border-r-transparent transition-all duration-500"></div>
               <div class="absolute rounded-[0.2vw] group-hover:rounded-none z-10 bottom-[0.25vw] left-[0.25vw] group-hover:-rotate-270 -rotate-90 w-0 h-0 border-t-[13px] border-t-blue-400 group-hover:border-t-neutral-100 border-r-[13px] border-r-transparent transition-all duration-500"></div>
               <div class="absolute rounded-[0.2vw] group-hover:rounded-none z-10 bottom-[0.25vw] right-[0.25vw] group-hover:rotate-0 -rotate-180 w-0 h-0 border-t-[13px] border-t-blue-400 group-hover:border-t-neutral-100 border-r-[13px] border-r-transparent transition-all duration-500"></div>
-              <div className='absolute w-0 opacity-20 group-hover:opacity-100 group-hover:w-[9vw] h-0 group-hover:h-[7vh] bg-blue-400 top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] transition-all duration-1000'></div>
-            <span className='relative z-20 text-black group-hover:text-neutral-100 transition-color duration-500'>COMPLETE</span>
-          </button>
-          {/* <button className='border-2 px-[0.3vw] py-[0.3vw] text-[1vw] font-bold cursor-pointer group'>
-            <div className='relative bg-neutral- px-[0.9vw] py-[0.4vw] overflow-hidden'>
-              <VscTriangleRight className='absolute group-hover:scale-[30] rotate-225 group-hover:rotate-405 text-purple-400 -top-[0.3vw] -left-[0.3vw] transition-all duration-1000'/>
-              <VscTriangleRight className='absolute group-hover:scale-[30] -rotate-45 group-hover:-rotate-225 text-purple-400 -top-[0.3vw] -right-[0.3vw] transition-all duration-1000'/>
-              <VscTriangleRight className='absolute group-hover:scale-[30] rotate-135 group-hover:-rotate-45 text-purple-400 -bottom-[0.3vw] -left-[0.3vw] transition-all duration-1000'/>
-              <VscTriangleRight className='absolute group-hover:scale-[30] rotate-45 group-hover:rotate-225 text-purple-400 -bottom-[0.3vw] -right-[0.3vw] transition-all duration-1000'/>
+              <div className='absolute w-0 opacity-20 group-hover:opacity-100 group-hover:w-[13vw] h-0 group-hover:h-[7vh] bg-blue-400 top-[50%] -translate-y-[50%] left-[50%] -translate-x-[50%] transition-all duration-1000'></div>
               <span className='relative z-20 text-black group-hover:text-neutral-100 transition-color duration-500'>COMPLETE</span>
-            </div>
-          </button> */}
+            </button>
+          </div>
         </div>
       </div>
       {/* right part */}
       <div className='h-full flex-1 w-full p-[1vw]'>
         <div className='flex flex-col justify-between bg-neutral-100 w-full h-full rounded-[0.7vw] shadow-[0_0_13px_rgba(0,0,0,0.3)] p-[1vw]'>
           {/* title and tasks part */}
-          <div className='flex flex-col h-[89%] justify-center items-center w-full'>
+          <div className={`flex flex-col ${addTask ? 'h-[77%]' : 'h-[89%]'} justify-center items-center w-full transition-all duration-500`}>
             {/* title part */}
             <div className='relative w-[26vw]'>
               <img src={assets.text_bg} alt="" className='w-full h-full opacity-40' />
@@ -310,17 +313,39 @@ const Lobby = () => {
             </div>
           </div>
           {/*  create tasks part */}
-          <div className='flex flex-col justify-end w-full'>
-            <div className='flex justify-evenly items-center w-full'>
-              <button className='flex justify-center items-center gap-[0.7vw] bg-neutral-100 border-2 border-neutral-300 px-[1vw] py-[0.43vw] rounded-[0.4vw] cursor-pointer group hover:border-neutral-400 transition-color duration-300'>
-                <span className='text-[1vw] font-bold text-neutral-600'>ADD TASK</span>
-                <span className='flex justify-center items-center border-2 border-neutral-600 rounded-full group-hover:bg-neutral-200 transition-color duration-300'>
-                  <FiPlus size={23} className='text-neutral-600 group-hover:rotate-90 transition-all duration-500' />
-                </span>
-              </button>
+          <div className='flex flex-col justify-end items-center w-full h-full px-[0.69vw] pb-[0.69vw]'>
+              <div className={`${addTask ? 'border-2' : 'border-0'} border-neutral-300 rounded-[0.43vw] ${addTask ? 'w-full h-full' : ''} transition-all duration-700 overflow-hidden`}>
+                {/* add task button */}
+                <button onClick={() => setAddTask(!addTask)} className={`${addTask ? 'opacity-0 pointer-events-none hidden' : 'opacity-100'} flex justify-center items-center gap-[0.7vw] bg-neutral-100 border-2 border-neutral-300 px-[1vw] py-[0.43vw] rounded-[0.4vw] cursor-pointer group hover:border-neutral-400 hover:transition-color hover:duration-300`}>
+                  <span className='text-[1vw] font-bold text-neutral-600'>ADD TASK</span>
+                  <span className='flex justify-center items-center border-2 border-neutral-600 rounded-full group-hover:bg-neutral-200 transition-color duration-300'>
+                    <FiPlus size={23} className='text-neutral-600 group-hover:rotate-90 transition-all duration-500' />
+                  </span>
+                </button>
+                {/* inside content of add task */}
+                <div className={`${addTask ? 'flex' : 'hidden'} flex-col justify-evenly items-center w-full h-full px-[0.7vw] py-[0.77vw] gap-[0.52vw]`}>
+                  <textarea type="text" className='px-[0.5vw] py-[0.3vw] text-[1vw] w-full flex-1 border-2 border-neutral-300 outline-none focus:border-neutral-400 rounded-[0.4vw] transition-all duration-500' placeholder='--- Enter new task ---'/>
+                  <div className='flex jusity-between items-center w-full flex-1 justify-evenly'>
+                    {/* difficulty select */}
+                    <div className='flex jusity-between items-center h-full flex-1 justify-center items-center'>
+                      <div className='flex flex-col justify-center gap-[0.2vw] items-center pl-[1vw]'>
+                        <span className='text-[0.9vw] leading-none font-semibold text-neutral-600'>Difficulty</span>
+                        <span className='text-[1.1vw] leading-none font-bold text-blue-400'>{difficultyValue}</span>
+                      </div>
+                      <div className='flex justify-center flex-1'>
+                        <input type="range" className='w-[90%] cursor-pointer accent-blue-500' min={1} max={10} value={difficultyValue} onChange={(e) => setDifficultyValue(e.target.value)}/>
+                      </div>
+                    </div>
+                    <div className='h-full flex justify-cneter items-center'>
+                      <button className='bg-blue-400 text-[0.85vw] font-semibold text-white cursor-pointer border-2 border-blue-400 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 h-[2.4vw] w-[5.2vw] rounded-[0.3vw] transition-all duration-300'> 
+                        Add Task + 
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   )

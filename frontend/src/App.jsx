@@ -5,6 +5,7 @@ import SelectCharacter from './pages/SelectCharacter'
 import Lobby from './pages/Lobby'
 import Play from './pages/Play'
 import Login from './pages/Login'
+import Temp from './pages/Temp'
 
 const App = () => {
 
@@ -28,6 +29,10 @@ const App = () => {
     {
       path: "/login",
       element: <Login/>
+    },
+    {
+      path: "/temp",
+      element: <Temp/>
     }
   ])
 

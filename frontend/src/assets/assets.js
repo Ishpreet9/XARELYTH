@@ -23,6 +23,11 @@ import bg_image_1 from './bg_image_1.jpg'
 import platform from './platform.png';
 import character from './character.png';
 import player from './player.png'
+import mana_icon from './mana_icon.png'
+import health_icon from './health_icon.png'
+import banner from './banner.png';
+import temp from './temp.png';
+import horizontal_banner from './horizontal_banner.png';
 
 export const assets = {
     clickSoundEffect,
@@ -49,5 +54,10 @@ export const assets = {
     bg_image_1,
     platform,
     character,
-    player
+    player,
+    mana_icon,
+    health_icon,
+    banner,
+    temp,
+    horizontal_banner
 }
