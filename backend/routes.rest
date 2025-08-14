@@ -1,0 +1,35 @@
+### Register a new user
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Login and get JWT token
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+### Select character (Protected)
+GET  http://localhost:5000/select-character
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "characterId": 1
+}
+
+### Get lobby info (Protected)
+GET http://localhost:5000/lobby
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OThhYjNiZWY3MjYwM2UzMDc2ZWE4MSIsImlhdCI6MTc1NDgzNjMxMiwiZXhwIjoxNzU0ODM5OTEyfQ.g5bBbrMkWz5a6V796mb8c9TmIJXHRE7OaH-lQ89zn4o
+
+
+### Get profile info (Protected)
+GET http://localhost:5000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OThhYjNiZWY3MjYwM2UzMDc2ZWE4MSIsImlhdCI6MTc1NDgzNjMxMiwiZXhwIjoxNzU0ODM5OTEyfQ.g5bBbrMkWz5a6V796mb8c9TmIJXHRE7OaH-lQ89zn4o

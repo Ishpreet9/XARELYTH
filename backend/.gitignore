@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# macOS files
+.DS_Store
+
+# Editor/IDE files
+.vscode/
+.idea/
+
+# Production files
+dist/
+
+# MongoDB data files (if storing locally)
+data/db/
