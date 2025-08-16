@@ -1,30 +1,33 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const cookieParser = require("cookie-parser");
 
-const authRoutes= require("./routes/authRoutes")
-const lobbyRoutes = require("./routes/lobby");
-const profileRoutes = require("./routes/profile");
-const selectCharacterRoute = require("./routes/selectCharacter");
+// Routes
+const authRoutes = require("./routes/authRoutes");
+const playerRoutes = require("./routes/playerRoutes");
+const lobbyRoutes = require("./routes/lobbyRoutes");
+const profileRoutes = require("./routes/profileRoutes");
 
 dotenv.config();
-
 connectDB();
 
 const app = express();
 
-// Middleware to parse JSON
+// Middleware
 app.use(express.json());
+app.use(cookieParser());
 
 // Test route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the Game API" });
 });
 
-app.use("/lobby", lobbyRoutes);
-app.use("/profile", profileRoutes);
-app.use("/select-character", selectCharacterRoute);
-app.use('/',authRoutes);
+// Route mounting
+app.use("/api", authRoutes);
+app.use("/api", playerRoutes);
+app.use("/api/lobby", lobbyRoutes);
+app.use("/api/profile", profileRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
