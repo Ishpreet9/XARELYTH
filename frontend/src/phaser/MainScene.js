@@ -27,6 +27,9 @@ export default class MainScene extends Phaser.Scene {
         this.player = this.physics.add.sprite(430, this.scale.height - 600, 'player').setScale(0.8);
         this.player.setBounce(0.2);
 
+        this.player.body.setSize(this.player.width, this.player.height-40);
+
+
         this.anims.create({
             key: 'walk',
             frames: this.anims.generateFrameNumbers('player', { start: 1, end: 14 }),
