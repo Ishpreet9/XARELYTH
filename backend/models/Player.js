@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const PlayerSchema = new mongoose.Schema({
   username: {
     type: String,
+    unique: true,
     trim: true,
     minlength: 3,
     maxlength: 15,
@@ -13,17 +14,25 @@ const PlayerSchema = new mongoose.Schema({
     unique: true,
     lowercase: true,
     trim: true,
+    required: true,
   },
   password: {
     type: String,
     required: true,
     minlength: 6,
-    select: true, // Don't return password in queries
+    select: false, // Don't return password in queries
     },
   createdAt: {
     type: Date,
     default: Date.now,
   },
+
+    isVerified: {
+    type: Boolean,
+    default: false,
+  },
+  otp: String,
+  otpExpiry: Date,
 });
 
 PlayerSchema.pre("save", async function (next) {
@@ -34,7 +43,6 @@ PlayerSchema.pre("save", async function (next) {
   next();
 });
 
-// Compare password for login
 PlayerSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };

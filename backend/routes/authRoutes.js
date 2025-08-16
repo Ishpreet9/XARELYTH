@@ -1,77 +1,34 @@
 const express = require("express");
 const Player = require("../models/Player");
 const jwt = require("jsonwebtoken");
+const verifyOtp = require("../controllers/auth/verifyOtpController");
+const authController = require("../controllers/auth/authController");
 
 const router = express.Router();
 
-router.post("/register", async (req, res) => {
+router.post("/verify-otp", verifyOtp);
+router.post("/register", authController.register);
+router.post("/login", authController.login);
+router.post("/logout", authController.logout);
+router.post("/refresh-token", (req, res) => {
+  const token = req.cookies.refreshToken;
+  if (!token) return res.status(401).json({ message: "No refresh token" });
+
   try {
-    const {username, email, password } = req.body;
-    const existingPlayer = await Player.findOne({ email });
-    if (existingPlayer) {
-      return res.status(400).json({ message: "Player already exists" });
-    }
+    const decoded = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
 
-    const player = await Player.create({username, email, password });
+    const newAccessToken = jwt.sign(
+      { id: decoded.id },
+      process.env.JWT_SECRET,
+      { expiresIn: "15m" }
+    );
 
-    const token = jwt.sign({ id: player._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
-
-    res.status(201).json({
-      message: "Player registered successfully",
-      token,
-    });
+    res.json({ accessToken: newAccessToken });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server error" });
+    return res
+      .status(403)
+      .json({ message: "Invalid or expired refresh token" });
   }
 });
-
-//Login existing player ....@route   POST /api/auth/login
-router.post("/login", async (req, res) => {
-  try {
-    const { username, email, password } = req.body;
-
-    // Ensure at least one of email/username is provided
-    if (!email && !username) {
-      return res
-        .status(400)
-        .json({ message: "Please provide email or username" });
-    }
-
-    // Find player by email or username
-    let player;
-    if (email) {
-      player = await Player.findOne({ email });
-    } else {
-      player = await Player.findOne({ username });
-    }
-
-    if (!player) {
-      return res.status(400).json({ message: "Invalid credentials" });
-    }
-
-    // Match password
-    const isMatch = await player.matchPassword(password);
-    if (!isMatch) {
-      return res.status(400).json({ message: "Invalid credentials" });
-    }
-
-    // Generate JWT
-    const token = jwt.sign({ id: player._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
-
-    res.json({
-      message: "Login successful",
-      token,
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server error" });
-  }
-});
-
 
 module.exports = router;
