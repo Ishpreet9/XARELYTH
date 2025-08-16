@@ -28,6 +28,8 @@ import health_icon from './health_icon.png'
 import banner from './banner.png';
 import temp from './temp.png';
 import horizontal_banner from './horizontal_banner.png';
+import lobby_bg from './lobby_bg.png';
+import hexagon_pattern from './hexagon_pattern.png';
 
 export const assets = {
     clickSoundEffect,
@@ -59,5 +61,7 @@ export const assets = {
     health_icon,
     banner,
     temp,
-    horizontal_banner
+    horizontal_banner,
+    lobby_bg,
+    hexagon_pattern
 }
