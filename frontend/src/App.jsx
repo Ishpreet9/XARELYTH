@@ -7,6 +7,7 @@ import Play from './pages/Play'
 import Login from './pages/Login'
 import Temp from './pages/Temp'
 import Lobby1 from './pages/Lobby1'
+import TaskPreferences from './pages/TaskPreferences'
 
 const App = () => {
 
@@ -38,6 +39,10 @@ const App = () => {
     {
       path: "/temp",
       element: <Temp/>
+    },
+    {
+      path: "/task-preferences",
+      element: <TaskPreferences/>
     }
   ])
 

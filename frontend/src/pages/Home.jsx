@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <div className='w-screen h-screen relative flex justify-center items-center'>
-      <img src={assets.bg_image_2} className='absolute w-full h-full brightness-50' alt="" />
+      <img src={assets.bg_image_2} className='absolute w-full h-full brightness-70' alt="" />
     <div className='flex flex-col justify-center items-center h-screen w-screen backdrop-blur-3xl'>
       {/* background elements */}
       <div className='absolute w-[85vw] h-[86vh] border-y-2 border-black/40'></div>
