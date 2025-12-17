@@ -17,37 +17,25 @@ const Navbar2 = () => {
   }, [location]);
 
     return (
-        <div className='flex justify-center items-center gap-[1vw]'>
-            <NavLink to={'/'} className={`relative w-24 h-24 bg-neutral-400/70 hover:bg-blue-400 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-300`}>
-                <div className="absolute flex justify-center items-center overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-21 h-21 bg-neutral-100 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)]">
-                  <MdHome size={52} className={`text-neutral-400 group-hover:text-blue-400 leading-none transition-all duration-300`}/>
-                </div>
+        <div className='flex justify-center items-center gap-[1.5vw]'>
+            <NavLink to={'/'} className={`relative w-[4.5vw] h-[4.35vw] flex justify-center items-center backdrop-blur-lg bg-black/50 hover:bg-orange-300 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-500`}>
+                  <MdHome className={`text-neutral-200 text-[2.5vw] group-hover:text-black leading-none transition-all duration-500`}/>
             </NavLink>
-            <NavLink to={'/login'} className={`relative w-24 h-24 bg-neutral-400/70 hover:bg-blue-400 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-300`}>
-                <div className="absolute flex justify-center items-center overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-21 h-21 bg-neutral-100 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)]">
-                  <BsPersonFill size={52} className={`text-neutral-400 group-hover:text-blue-400 leading-none transition-all duration-300`}/>
-                </div>
+            <NavLink to={'/'} className={`relative w-[4.5vw] h-[4.35vw] flex justify-center items-center backdrop-blur-lg bg-black/50 hover:bg-orange-300 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-500`}>
+                  <BsPersonFill className={`text-neutral-200 text-[2.5vw] group-hover:text-black leading-none transition-all duration-500`}/>
             </NavLink>
-            <div className={`relative w-24 h-24 bg-neutral-400/70 hover:bg-blue-400 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-300`}>
-                <div className="absolute flex justify-center items-center overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-21 h-21 bg-neutral-100 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)]">
-                  <IoMdSettings size={52} className={`text-neutral-400 group-hover:text-blue-400 leading-none transition-all duration-300`}/>
-                </div>
-            </div>
-            <div className={`relative w-24 h-24 bg-neutral-400/70 hover:bg-blue-400 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-300`}>
-                <div className="absolute flex justify-center items-center overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-21 h-21 bg-neutral-100 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)]">
-                  <FaToolbox size={52} className={`text-neutral-400 group-hover:text-blue-400 leading-none transition-all duration-300`}/>
-                </div>
-            </div>
-            <div className={`relative w-24 h-24 bg-neutral-400/70 hover:bg-blue-400 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-300`}>
-                <div className="absolute flex justify-center items-center overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-21 h-21 bg-neutral-100 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)]">
-                  <FaScroll size={52} className={`text-neutral-400 group-hover:text-blue-400 leading-none transition-all duration-300`}/>
-                </div>
-            </div>
-            <div className={`relative w-24 h-24 bg-neutral-400/70 hover:bg-blue-400 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-300`}>
-                <div className="absolute flex justify-center items-center overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-21 h-21 bg-neutral-100 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)]">
-                  <FaMedal size={52} className={`text-neutral-400 group-hover:text-blue-400 leading-none transition-all duration-300`}/>
-                </div>
-            </div>
+            <NavLink to={'/'} className={`relative w-[4.5vw] h-[4.35vw] flex justify-center items-center backdrop-blur-lg bg-black/50 hover:bg-orange-300 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-500`}>
+                  <IoMdSettings className={`text-neutral-200 text-[2.5vw] group-hover:text-black leading-none transition-all duration-500`}/>
+            </NavLink>
+            <NavLink to={'/'} className={`relative w-[4.5vw] h-[4.35vw] flex justify-center items-center backdrop-blur-lg bg-black/50 hover:bg-orange-300 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-500`}>
+                  <FaToolbox className={`text-neutral-200 text-[2.2vw] group-hover:text-black leading-none transition-all duration-500`}/>
+            </NavLink>
+            <NavLink to={'/'} className={`relative w-[4.5vw] h-[4.35vw] flex justify-center items-center backdrop-blur-lg bg-black/50 hover:bg-orange-300 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-500`}>
+                  <FaScroll className={`text-neutral-200 text-[2.2vw] group-hover:text-black leading-none transition-all duration-500`}/>
+            </NavLink>
+            <NavLink to={'/'} className={`relative w-[4.5vw] h-[4.35vw] flex justify-center items-center backdrop-blur-lg bg-black/50 hover:bg-orange-300 [clip-path:polygon(25%_6.7%,75%_6.7%,100%_50%,75%_93.3%,25%_93.3%,0%_50%)] group cursor-pointer transition-all duration-500`}>
+                  <FaMedal className={`text-neutral-200 text-[2.2vw] group-hover:text-black leading-none transition-all duration-500`}/>
+            </NavLink>
         </div>
     )
 }

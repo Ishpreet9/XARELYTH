@@ -5,9 +5,9 @@ import CrossButton from './CrossButton'
 
 const SelectionBox = ({selectionBoxVisible, setSelectionBoxVisible}) => {
   return (
-    <div className={`flex justify-center items-center absolute inset-0 w-screen h-screen backdrop-blur-lg ${selectionBoxVisible ? '' : 'scale-0'} transition-all duration-400`}>
+    <div className={`flex justify-center z-30 items-center absolute inset-0 w-screen h-screen backdrop-blur-lg ${selectionBoxVisible ? '' : 'scale-0'} transition-all duration-400`}>
         <div className='relative flex h-[69vh] w-[69vw] bg-neutral-100 shadow-xl p-[1.43vw] gap-[1.43vw] rounded-[0.7vw]'>
-            <div onClick={()=>setSelectionBoxVisible(false)} className='absolute z-10 right-[1vw] -top-[3.8vw]'>
+            <div onClick={()=>setSelectionBoxVisible(false)} className='absolute z-30 right-[1vw] -top-[3.8vw]'>
                <CrossButton/>
             </div>
             <div className='h-full w-[21.4vw] bg-green-400 overflow-hidden rounded-[0.7vw] border-2 border-neutral-100'>
@@ -24,7 +24,7 @@ const SelectionBox = ({selectionBoxVisible, setSelectionBoxVisible}) => {
                 <span>STATS</span>
               </div>
               <div className='flex justify-center items-center w-full flex-1'>
-                 <NavLink to={'/lobby'} className='relative flex justify-center items-center w-[9.5vw] h-[80%] text-2xl text-[1.3vw] bg-transparent border-2 border-green-600 hover:border-white font-bold cursor-pointer text-green-600 overflow-hidden group'>
+                 <NavLink to={'/lobby1'} className='relative flex justify-center items-center w-[9.5vw] h-[80%] text-2xl text-[1.3vw] bg-transparent border-2 border-green-600 hover:border-white font-bold cursor-pointer text-green-600 overflow-hidden group'>
                   <div className='absolute w-[120%] h-[130%] bg-green-500 skew-x-12 -translate-x-[11vw] group-hover:translate-x-0 transition-all duration-1000'></div>
                    <span className='relative z-10 group-hover:text-white transition-color duration-700'>CONFIRM</span>
                  </NavLink>

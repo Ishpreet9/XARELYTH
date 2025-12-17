@@ -25,7 +25,7 @@ const CrossButton = () => {
       <p
         class="font-Manrope text-3xl h-full w-full flex items-center justify-center text-black duration-500 relative z-10 group-hover:scale-0"
       >
-        <RxCross2 size={20} color='black' className='mt-[0.1vw] opacity-40' />
+        <RxCross2 size={20} color='white' className='mt-[0.1vw] opacity-50' />
       </p>
       <span
         class="absolute w-full h-full bg-neutral-400 group-hover:bg-red-400 rotate-45 group-hover:top-9 duration-500 top-12 left-0"

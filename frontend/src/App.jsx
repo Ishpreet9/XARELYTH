@@ -6,6 +6,7 @@ import Lobby from './pages/Lobby'
 import Play from './pages/Play'
 import Login from './pages/Login'
 import Temp from './pages/Temp'
+import Lobby1 from './pages/Lobby1'
 
 const App = () => {
 
@@ -21,6 +22,10 @@ const App = () => {
     {
       path: "/lobby",
       element: <Lobby/>
+    },
+    {
+      path: "/lobby1",
+      element: <Lobby1/>
     },
     {
       path: "/play",

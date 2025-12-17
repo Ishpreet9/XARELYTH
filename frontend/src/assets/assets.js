@@ -20,6 +20,7 @@ import rank_s from './rank_s.png'
 import text_bg from './text_bg.png'
 import triangle from './triangle.png'
 import bg_image_1 from './bg_image_1.jpg'
+import bg_image_2 from './bg_image_2.png'
 import platform from './platform.png';
 import character from './character.png';
 import player from './player.png'
@@ -30,6 +31,19 @@ import temp from './temp.png';
 import horizontal_banner from './horizontal_banner.png';
 import lobby_bg from './lobby_bg.png';
 import hexagon_pattern from './hexagon_pattern.png';
+import bg_lobby from './bg_lobby.png'
+import kazuki_l1 from './kazuki_l1.png'
+import kazuki_l2 from './kazuki_l2.png'
+import kazuki_l3 from './kazuki_l3.png'
+import kazuki_l4 from './kazuki_l4.png'
+import kazuki_l5 from './kazuki_l5.png'
+import kazuki_l6 from './kazuki_l6.png'
+import kazuki_l1_vid from './kazuki_l1_vid.mp4'
+import kazuki_l2_vid from './kazuki_l2_vid.mp4'
+import kazuki_l3_vid from './kazuki_l3_vid.mp4'
+import kazuki_l4_vid from './kazuki_l4_vid.mp4'
+import kazuki_l5_vid from './kazuki_l5_vid.mp4'
+import kazuki_l6_vid from './kazuki_l6_vid.mp4'
 
 export const assets = {
     clickSoundEffect,
@@ -54,6 +68,7 @@ export const assets = {
     text_bg,
     triangle,
     bg_image_1,
+    bg_image_2,
     platform,
     character,
     player,
@@ -63,5 +78,18 @@ export const assets = {
     temp,
     horizontal_banner,
     lobby_bg,
-    hexagon_pattern
+    hexagon_pattern,
+    bg_lobby,
+    kazuki_l1,
+    kazuki_l2,
+    kazuki_l3,
+    kazuki_l4,
+    kazuki_l5,
+    kazuki_l6,
+    kazuki_l1_vid,
+    kazuki_l2_vid,
+    kazuki_l3_vid,
+    kazuki_l4_vid,
+    kazuki_l5_vid,
+    kazuki_l6_vid,
 }
