@@ -1,14 +1,15 @@
 ### Register a new user
-POST http://localhost:5000/register
+POST http://localhost:5000/api/register
 Content-Type: application/json
 
 {
   "username": "testuser",
+  "email": "testuser@example.com",
   "password": "password123"
 }
 
-### Login and get JWT token
-POST  http://localhost:5000/login
+### Login and get JWT token (returns access + refresh)
+POST http://localhost:5000/api/login
 Content-Type: application/json
 
 {
@@ -17,19 +18,25 @@ Content-Type: application/json
 }
 
 ### Select character (Protected)
-GET  http://localhost:5000/select-character
+GET http://localhost:5000/api/select-character
+Authorization: Bearer {{accessToken}}
 Content-Type: application/json
-Authorization: Bearer {{token}}
 
 {
   "characterId": 1
 }
 
-### Get lobby info (Protected)
-GET http://localhost:5000/lobby
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OThhYjNiZWY3MjYwM2UzMDc2ZWE4MSIsImlhdCI6MTc1NDgzNjMxMiwiZXhwIjoxNzU0ODM5OTEyfQ.g5bBbrMkWz5a6V796mb8c9TmIJXHRE7OaH-lQ89zn4o
+### Get all users (Public for now)
+GET http://localhost:5000/api/users
+Content-Type: application/json
 
+### Get lobby info (Protected)
+GET http://localhost:5000/api/lobby
+Authorization: Bearer {{accessToken}}
 
 ### Get profile info (Protected)
-GET http://localhost:5000/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OThhYjNiZWY3MjYwM2UzMDc2ZWE4MSIsImlhdCI6MTc1NDgzNjMxMiwiZXhwIjoxNzU0ODM5OTEyfQ.g5bBbrMkWz5a6V796mb8c9TmIJXHRE7OaH-lQ89zn4o
+GET http://localhost:5000/api/profile
+Authorization: Bearer {{accessToken}}
+
+### Refresh access token using refreshToken cookie
+POST http://localhost:5000/api/refresh-token
